@@ -93,7 +93,7 @@ Hanna components use some libraries. Nuget packages used are included in the sou
 *These are some of the to-dos for Hanna*
 - [ ] Add a UML Diagram Storyboard into the studio.
 - [ ] Add container value disposal.
-- [ ] Add multiple conditionals to a choices.
+- [ ] Add multiple conditionals to choices.
 - [ ] Add proper game exporting.
 
 ***
