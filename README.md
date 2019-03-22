@@ -67,7 +67,7 @@ C:/Debug> hannacli mygame.json debug
 ```
 The Studio doesn't have exporting to desired file and location yet :( I was working on so many other things and I hadn't done that yet. But whenever you run your game in the studio, it is exported to the parent directory of the studio as "export.json".
 
-Most of the UI comes clear as soon as you understand the all of the above!
+Most of the UI comes clear as soon as you understand all of the above!
 
 ### Project Meta Data
 Your game project will have meta data of course. When you create a new project you give your game a title and an author..... there will also be a description in there.
@@ -89,6 +89,12 @@ Hanna Studio files are under the extension .hprj.
 ### Nuget Packages and References
 Hanna components use some libraries. Nuget packages used are included in the source as well as references.
 
+### TO-DO
+*These are some of the to-dos for Hanna*
+- [ ] Add a UML Diagram Storyboard into the studio.
+- [ ] Add container value disposal.
+- [ ] Add multiple conditionals to a choices.
+- [ ] Add proper game exporting.
 
 ***
 *This entire project is not complete nor does it meet any professional standards in terms of code or anything. The studio may have lots of bugs as well as the engine itself.... There is always room for improvement :)*
