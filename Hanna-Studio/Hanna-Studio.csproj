@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{111CE03D-DD5D-4888-B55F-32F812946DDB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hanna_Studio</RootNamespace>
+    <AssemblyName>Hanna-Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hannaicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConsoleControl">
+      <HintPath>..\..\..\..\Desktop\dll\ConsoleControl.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dlgAboutHanna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgAboutHanna.Designer.cs">
+      <DependentUpon>dlgAboutHanna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgEditConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgEditConfig.Designer.cs">
+      <DependentUpon>dlgEditConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgEditProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgEditProperty.Designer.cs">
+      <DependentUpon>dlgEditProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgManageContainers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgManageContainers.Designer.cs">
+      <DependentUpon>dlgManageContainers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgNewChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgNewChoice.Designer.cs">
+      <DependentUpon>dlgNewChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgNewProject.Designer.cs">
+      <DependentUpon>dlgNewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgNewSequence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgNewSequence.Designer.cs">
+      <DependentUpon>dlgNewSequence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exporter.cs" />
+    <Compile Include="frmHub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHub.Designer.cs">
+      <DependentUpon>frmHub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkspace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkspace.Designer.cs">
+      <DependentUpon>frmWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EngineObjects.cs" />
+    <Compile Include="ChoicePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RecentFilePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SequencePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StudioDBStuff.cs" />
+    <Compile Include="StudioObject.cs" />
+    <EmbeddedResource Include="dlgAboutHanna.resx">
+      <DependentUpon>dlgAboutHanna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgEditConfig.resx">
+      <DependentUpon>dlgEditConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgEditProperty.resx">
+      <DependentUpon>dlgEditProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgManageContainers.resx">
+      <DependentUpon>dlgManageContainers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgNewChoice.resx">
+      <DependentUpon>dlgNewChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgNewProject.resx">
+      <DependentUpon>dlgNewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgNewSequence.resx">
+      <DependentUpon>dlgNewSequence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHub.resx">
+      <DependentUpon>frmHub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkspace.resx">
+      <DependentUpon>frmWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\opensans_semibold.ttf" />
+    <None Include="Resources\typopro_extrabold.ttf" />
+    <None Include="Resources\typopro_semibold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash_screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnimage_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_container.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_edit_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hannaicon.ico" />
+    <None Include="Resources\btnimage_plus_white.png" />
+    <None Include="Resources\btnimage_plus.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
