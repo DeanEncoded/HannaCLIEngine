@@ -52,7 +52,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 34);
             this.label2.TabIndex = 2;
-            this.label2.Text = "This studio contains a lot of bugs and is not even\r\nunfinished whatsoever.";
+            this.label2.Text = "This studio contains a lot of bugs and is not even\r\nfinished. It\'s an ongoing pro" +
+    "ject.";
             // 
             // label3
             // 
