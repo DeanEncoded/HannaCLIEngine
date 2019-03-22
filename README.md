@@ -15,13 +15,13 @@ Hanna Studio is basically a "workspace" that allows you to make games for the en
 Here is a rundown on how making a game for Hanna works.
 Your game is generally made of **sequences**. These are kind of like levels/stages in your game. These **sequences** in your game have these properties:
 
+ - **sqId** (*this is basically a sequence identifier. It's unique for all sequences in your game.*)
  - **sqType** (*the type of sequence to be run. It can either be an **ordinary** sequence [which has choices] or an **end** sequence [which displays its 'text' properties and ends the game]*)
  - **mainText** (*text that is primarily displayed when the the sequence runs*)
  - **secondaryText** (*text that is secondarily displayed when the the sequence runs*:: You can use this property to ask the player things like "What do you want to do?" or "Pick an item", things along those lines)
  - **mainText** (*text that is primarily displayed when the the sequence runs*)
- - **choices** (*choices are what they say they are. You sequence can have multiple choices that the player can select from. Choices also have their own properties*)
+ - **choices** (*choices are what they say they are. Your sequence can have multiple choices that the player can select from. Choices also have their own properties*)
 	 - **choiceLetter** (*choices have letters assigned to them. The player uses letters to pick a choice from a list of choices*)
-	 - **choiceType** (*choices have two types. They can either be **set** or **conditional**. A set choice always appears when a sequence is run and a conditional choice only appears if a certain condition is met*)
 	 - **choiceType** (*choices have two types. They can either be **set** or **conditional**. A set choice always appears when a sequence is run and a conditional choice only appears if a certain condition is met*)
 	 - **choiceCondition** (*this is where the condition of your conditional choice is stored. This property keeps sub-properties **container** and **value**... [if **value** is in a **container**, then the current choice will be displayed, otherwise it won't] Containers are explained below somewhere. There's also the idea of having multiple choiceConditions.......that's a feature to be added I guess*)
 	 - **choiceText** (*this is the text that is displayed to the player as the choice*)
@@ -48,7 +48,7 @@ Now what might you use this value for??? Maybe you have a sequence that only dis
 Your games' containers can be added through this button in the studio.
 ![Containers Button Preview](https://raw.githubusercontent.com/deanencoded/hannacliengine/master/preview-images/studio_containers_button.jpg)
 
-If you've understood how things work so far.. or have a rough idea, using the studio won't be such a big deal do you. Things may be complicated at first but it'll all make sense.
+If you've understood how things work so far.. or have a rough idea, using the studio won't be such a big deal to you. Things may be complicated at first but it'll all make sense.
 
 ### Running my game
 You can easily run your game inside the studio by simply clicking the Run Game button on to top-bar section of the studio.
