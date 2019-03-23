@@ -1,5 +1,8 @@
 # HannaCLIEngine
 Hanna is a game engine for creating Choose Your Own Adventure games that run in the command line. You can create complex paths for your games with the power of **sequences and conditionals**.
+
+[Download Latest Release of Hanna Studio](https://github.com/DeanEncoded/HannaCLIEngine/releases)
+
 ## How does Hanna work?
 Hanna is made up of two components both written in seperate languages.
 These two components are:
@@ -88,6 +91,23 @@ Hanna Studio files are under the extension .hprj.
 
 ### Nuget Packages and References
 Hanna components use some libraries. Nuget packages used are included in the source as well as references.
+
+## Building Hanna from source (Windows)
+Here are the requirements for building Hanna from the source code:
+   - Visual Studio 2017 or later. With these workloads installed:
+      - .Net desktop development.
+      - Desktop development with C++ (Preferred Windows 10 SDK v 10.0.17763.0)
+ 
+Hanna-Studio (C#) depends on  HannaCLIEngine (C++) to run, so make sure to have both these Visual Studio workloads installed.
+Both of these separate projects are under the same solution.
+
+When you have Visual Studio ready, you can simply clone this repo using: (or download source)
+```console
+git clone https://github.com/DeanEncoded/HannaCLIEngine.git
+```
+Then just open the solution "HannaCLIEngine.sln" in Visual Studio and you're good to go!
+You can now build and run Hanna Studio straight from the source.
+**NOTE:** You might need to add "ConsoleControl.dll" as a reference to the Hanna Studio project. Just open the solution in Visual Studio and right click on the project Hanna-Studio > Add Reference > Browse .... then navigate to the references folder in the cloned source folder then select *ConsoleControl.dll*. Boom that's it. You should be able to run Hanna Studio.
 
 ### TO-DO
 *These are some of the to-dos for Hanna*
