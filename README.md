@@ -106,8 +106,12 @@ When you have Visual Studio ready, you can simply clone this repo using: (or dow
 git clone https://github.com/DeanEncoded/HannaCLIEngine.git
 ```
 Then just open the solution "HannaCLIEngine.sln" in Visual Studio and you're good to go!
+
+You might want to set the Startup project of the solution to **Hanna-Studio**.
+
 You can now build and run Hanna Studio straight from the source.
-**NOTE:** You might need to add "ConsoleControl.dll" as a reference to the Hanna Studio project. Just open the solution in Visual Studio and right click on the project Hanna-Studio > Add Reference > Browse .... then navigate to the references folder in the cloned source folder then select *ConsoleControl.dll*. Boom that's it. You should be able to run Hanna Studio.
+
+**NOTE:** You might also need to add "ConsoleControl.dll" as a reference to the Hanna Studio project. Just open the solution in Visual Studio and right click on the project Hanna-Studio > Add Reference > Browse .... then navigate to the *references* folder in the cloned source folder then select *ConsoleControl.dll*. Boom that's it. You should be able to run Hanna Studio.
 
 ### TO-DO
 *These are some of the to-dos for Hanna*
