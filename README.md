@@ -97,6 +97,7 @@ Here are the requirements for building Hanna from the source code:
    - Visual Studio 2017 or later. With these workloads installed:
       - .Net desktop development.
       - Desktop development with C++ (Preferred Windows 10 SDK v 10.0.17763.0)
+	  - C++ MFC for v142 build tools
  
 Hanna-Studio (C#) depends on  HannaCLIEngine (C++) to run, so make sure to have both these Visual Studio workloads installed.
 Both of these separate projects are under the same solution.
@@ -111,7 +112,11 @@ You might want to set the Startup project of the solution to **Hanna-Studio**.
 
 You can now build and run Hanna Studio straight from the source.
 
-**NOTE:** You might also need to add "ConsoleControl.dll" as a reference to the Hanna Studio project. Just open the solution in Visual Studio and right click on the project Hanna-Studio > Add Reference > Browse .... then navigate to the *references* folder in the cloned source folder then select *ConsoleControl.dll*. Boom that's it. You should be able to run Hanna Studio.
+### Building Notes ###
+You might also need to add "ConsoleControl.dll" as a reference to the Hanna Studio project. Just open the solution in Visual Studio and right click on the project Hanna-Studio > Add Reference > Browse .... then navigate to the *references* folder in the cloned source folder then select *ConsoleControl.dll*.
+You should be able to run Hanna Studio.
+Additionally, if you're able to run Hanna Studio but clicking *Run Game* does nothing on the console area... you might want to enable Build for HannaCLIEngine in the projects *Configuration Manager*. To do so, right click on the solution in Visual Studio > Select Configuration Manager > Enable Build on HannaCLIEngine.. then close and run Hanna again - things should work as intended.
+
 
 ### TO-DO
 *These are some of the to-dos for Hanna*
