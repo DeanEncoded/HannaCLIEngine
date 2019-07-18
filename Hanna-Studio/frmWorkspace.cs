@@ -393,8 +393,17 @@ namespace Hanna_Studio
 
         private void ExportProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Exporter ex = new Exporter(gameTitle, gameAuthor, mySequences, projectContainers, comboBoxStartSq.Text);
-            ex.exportToFile();*/
+            // set the name of the file to the project title
+            exportGameFileDialog.FileName = gameTitle;
+            exportGameFileDialog.ShowDialog();
+        }
+
+        private void ExportGameFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            // open to the requested file
+            Exporter ex = new Exporter(gameTitle, gameAuthor, gameDesc: gameDescription, mySequences, projectContainers, comboBoxStartSq.Text);
+            if (ex.exportToFile(true, (sender as SaveFileDialog).FileName)) MessageBox.Show("Game was exported successfully", "Export Successful");
+            else MessageBox.Show("Game failed to export", "Export Failed");
         }
 
 
@@ -557,6 +566,7 @@ namespace Hanna_Studio
             popupTimer.Enabled = true;
             popupMessage.Text = message;
         }
+
 
         private void OpenProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {

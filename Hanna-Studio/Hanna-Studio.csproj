@@ -58,49 +58,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dlgAboutHanna.cs">
+    <Compile Include="Dialogs\dlgAboutHanna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgAboutHanna.Designer.cs">
+    <Compile Include="Dialogs\dlgAboutHanna.Designer.cs">
       <DependentUpon>dlgAboutHanna.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgEditConfig.cs">
+    <Compile Include="Dialogs\dlgEditConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgEditConfig.Designer.cs">
+    <Compile Include="Dialogs\dlgEditConfig.Designer.cs">
       <DependentUpon>dlgEditConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgEditProperty.cs">
+    <Compile Include="Dialogs\dlgEditProperty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgEditProperty.Designer.cs">
+    <Compile Include="Dialogs\dlgEditProperty.Designer.cs">
       <DependentUpon>dlgEditProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgManageContainers.cs">
+    <Compile Include="Dialogs\dlgManageContainers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgManageContainers.Designer.cs">
+    <Compile Include="Dialogs\dlgManageContainers.Designer.cs">
       <DependentUpon>dlgManageContainers.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgNewChoice.cs">
+    <Compile Include="Dialogs\dlgNewChoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgNewChoice.Designer.cs">
+    <Compile Include="Dialogs\dlgNewChoice.Designer.cs">
       <DependentUpon>dlgNewChoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgNewProject.cs">
+    <Compile Include="Dialogs\dlgNewProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgNewProject.Designer.cs">
+    <Compile Include="Dialogs\dlgNewProject.Designer.cs">
       <DependentUpon>dlgNewProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="dlgNewSequence.cs">
+    <Compile Include="Dialogs\dlgNewSequence.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dlgNewSequence.Designer.cs">
+    <Compile Include="Dialogs\dlgNewSequence.Designer.cs">
       <DependentUpon>dlgNewSequence.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exporter.cs" />
+    <Compile Include="Helpers\CryptoHelper.cs" />
+    <Compile Include="Helpers\Exporter.cs" />
     <Compile Include="frmHub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,42 +120,43 @@
     <Compile Include="frmWorkspace.Designer.cs">
       <DependentUpon>frmWorkspace.cs</DependentUpon>
     </Compile>
-    <Compile Include="GradientPanel.cs">
+    <Compile Include="CustomControls\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helpers\KEYS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EngineObjects.cs" />
-    <Compile Include="ChoicePanel.cs">
+    <Compile Include="Objects\EngineObjects.cs" />
+    <Compile Include="CustomControls\ChoicePanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RecentFilePanel.cs">
+    <Compile Include="CustomControls\RecentFilePanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SequencePanel.cs">
+    <Compile Include="CustomControls\SequencePanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="StudioDBStuff.cs" />
-    <Compile Include="StudioObject.cs" />
-    <EmbeddedResource Include="dlgAboutHanna.resx">
+    <Compile Include="Objects\StudioDBObjects.cs" />
+    <Compile Include="Objects\StudioObject.cs" />
+    <EmbeddedResource Include="Dialogs\dlgAboutHanna.resx">
       <DependentUpon>dlgAboutHanna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgEditConfig.resx">
+    <EmbeddedResource Include="Dialogs\dlgEditConfig.resx">
       <DependentUpon>dlgEditConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgEditProperty.resx">
+    <EmbeddedResource Include="Dialogs\dlgEditProperty.resx">
       <DependentUpon>dlgEditProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgManageContainers.resx">
+    <EmbeddedResource Include="Dialogs\dlgManageContainers.resx">
       <DependentUpon>dlgManageContainers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgNewChoice.resx">
+    <EmbeddedResource Include="Dialogs\dlgNewChoice.resx">
       <DependentUpon>dlgNewChoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgNewProject.resx">
+    <EmbeddedResource Include="Dialogs\dlgNewProject.resx">
       <DependentUpon>dlgNewProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgNewSequence.resx">
+    <EmbeddedResource Include="Dialogs\dlgNewSequence.resx">
       <DependentUpon>dlgNewSequence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHub.resx">
@@ -216,5 +218,6 @@
     <None Include="Resources\btnimage_plus_white.png" />
     <None Include="Resources\btnimage_plus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

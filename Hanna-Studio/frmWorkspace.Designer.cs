@@ -45,6 +45,10 @@
             this.aboutHannaStudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sqFlowPanel = new System.Windows.Forms.Panel();
+            this.gradientPanel1 = new Hanna_Studio.GradientPanel();
+            this.btnManageContainers = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.consoleAreaPanel = new System.Windows.Forms.Panel();
             this.workspaceConsole = new ConsoleControl.ConsoleControl();
             this.runConfigPanel = new System.Windows.Forms.Panel();
@@ -55,9 +59,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRunP = new System.Windows.Forms.Button();
             this.popupPanel = new System.Windows.Forms.Panel();
+            this.popupMessage = new System.Windows.Forms.Label();
             this.ultimateSplitContainer = new System.Windows.Forms.SplitContainer();
             this.choicesContainerPanel = new System.Windows.Forms.Panel();
             this.choicesFlowPanel = new System.Windows.Forms.Panel();
+            this.gradientPanel3 = new Hanna_Studio.GradientPanel();
+            this.btnAddChoice = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.propsPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.checkBoxEndsq = new MaterialSkin.Controls.MaterialCheckBox();
@@ -72,6 +80,8 @@
             this.panelProp = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.sqIdTextBox = new System.Windows.Forms.TextBox();
+            this.gradientPanel2 = new Hanna_Studio.GradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelStatusBar = new System.Windows.Forms.Panel();
             this.labelStatusBarMessage = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -82,22 +92,14 @@
             this.editSecTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteThisSequenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.popupMessage = new System.Windows.Forms.Label();
             this.popupTimer = new System.Windows.Forms.Timer(this.components);
-            this.gradientPanel1 = new Hanna_Studio.GradientPanel();
-            this.btnManageContainers = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gradientPanel3 = new Hanna_Studio.GradientPanel();
-            this.btnAddChoice = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.gradientPanel2 = new Hanna_Studio.GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.exportGameFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.workspaceMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.masterSplitContainer)).BeginInit();
             this.masterSplitContainer.Panel1.SuspendLayout();
             this.masterSplitContainer.Panel2.SuspendLayout();
             this.masterSplitContainer.SuspendLayout();
+            this.gradientPanel1.SuspendLayout();
             this.consoleAreaPanel.SuspendLayout();
             this.runConfigPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,17 +109,16 @@
             this.ultimateSplitContainer.Panel2.SuspendLayout();
             this.ultimateSplitContainer.SuspendLayout();
             this.choicesContainerPanel.SuspendLayout();
+            this.gradientPanel3.SuspendLayout();
             this.propsPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelProp.SuspendLayout();
+            this.gradientPanel2.SuspendLayout();
             this.panelStatusBar.SuspendLayout();
             this.workspacePanel.SuspendLayout();
             this.sequenceContextMenuStrip.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
-            this.gradientPanel3.SuspendLayout();
-            this.gradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // workspaceMenuStrip
@@ -142,34 +143,34 @@
             this.saveToolStripMenuItem,
             this.saveASToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectToolStripMenuItem_Click);
             // 
             // openProjectToolStripMenuItem
             // 
             this.openProjectToolStripMenuItem.Name = "openProjectToolStripMenuItem";
-            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.openProjectToolStripMenuItem.Text = "Open Project";
             this.openProjectToolStripMenuItem.Click += new System.EventHandler(this.OpenProjectToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // saveASToolStripMenuItem
             // 
             this.saveASToolStripMenuItem.Name = "saveASToolStripMenuItem";
-            this.saveASToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.saveASToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.saveASToolStripMenuItem.Text = "Save AS";
             this.saveASToolStripMenuItem.Click += new System.EventHandler(this.SaveASToolStripMenuItem_Click);
             // 
@@ -179,13 +180,13 @@
             this.findToolStripMenuItem});
             this.editToolStripMenuItem.Enabled = false;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.findToolStripMenuItem.Text = "Find";
             // 
             // exportToolStripMenuItem
@@ -194,20 +195,20 @@
             this.editProjectMetadataToolStripMenuItem,
             this.exportProjectToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.exportToolStripMenuItem.Text = "Project";
             // 
             // editProjectMetadataToolStripMenuItem
             // 
             this.editProjectMetadataToolStripMenuItem.Name = "editProjectMetadataToolStripMenuItem";
-            this.editProjectMetadataToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.editProjectMetadataToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.editProjectMetadataToolStripMenuItem.Text = "Edit Project Metadata";
             // 
             // exportProjectToolStripMenuItem
             // 
             this.exportProjectToolStripMenuItem.Name = "exportProjectToolStripMenuItem";
-            this.exportProjectToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.exportProjectToolStripMenuItem.Text = "Export Project";
+            this.exportProjectToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.exportProjectToolStripMenuItem.Text = "Export Game";
             this.exportProjectToolStripMenuItem.Click += new System.EventHandler(this.ExportProjectToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -215,13 +216,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutHannaStudioToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutHannaStudioToolStripMenuItem
             // 
             this.aboutHannaStudioToolStripMenuItem.Name = "aboutHannaStudioToolStripMenuItem";
-            this.aboutHannaStudioToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.aboutHannaStudioToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.aboutHannaStudioToolStripMenuItem.Text = "About Hanna Studio";
             this.aboutHannaStudioToolStripMenuItem.Click += new System.EventHandler(this.AboutHannaStudioToolStripMenuItem_Click);
             // 
@@ -253,6 +254,63 @@
             this.sqFlowPanel.Name = "sqFlowPanel";
             this.sqFlowPanel.Size = new System.Drawing.Size(332, 638);
             this.sqFlowPanel.TabIndex = 2;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.gradientPanel1.Controls.Add(this.btnManageContainers);
+            this.gradientPanel1.Controls.Add(this.button1);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(332, 56);
+            this.gradientPanel1.TabIndex = 0;
+            // 
+            // btnManageContainers
+            // 
+            this.btnManageContainers.BackColor = System.Drawing.Color.Transparent;
+            this.btnManageContainers.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnManageContainers.FlatAppearance.BorderSize = 0;
+            this.btnManageContainers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnManageContainers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnManageContainers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageContainers.Image = global::Hanna_Studio.Properties.Resources.ic_container;
+            this.btnManageContainers.Location = new System.Drawing.Point(230, 0);
+            this.btnManageContainers.Name = "btnManageContainers";
+            this.btnManageContainers.Size = new System.Drawing.Size(51, 56);
+            this.btnManageContainers.TabIndex = 3;
+            this.btnManageContainers.UseVisualStyleBackColor = false;
+            this.btnManageContainers.Click += new System.EventHandler(this.BtnManageContainers_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
+            this.button1.Location = new System.Drawing.Point(281, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 56);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(26, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sequences";
             // 
             // consoleAreaPanel
             // 
@@ -382,6 +440,18 @@
             this.popupPanel.TabIndex = 2;
             this.popupPanel.Visible = false;
             // 
+            // popupMessage
+            // 
+            this.popupMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.popupMessage.AutoSize = true;
+            this.popupMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F);
+            this.popupMessage.ForeColor = System.Drawing.Color.White;
+            this.popupMessage.Location = new System.Drawing.Point(21, 12);
+            this.popupMessage.Name = "popupMessage";
+            this.popupMessage.Size = new System.Drawing.Size(82, 18);
+            this.popupMessage.TabIndex = 0;
+            this.popupMessage.Text = "MESSAGE";
+            // 
             // ultimateSplitContainer
             // 
             this.ultimateSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -421,6 +491,46 @@
             this.choicesFlowPanel.Name = "choicesFlowPanel";
             this.choicesFlowPanel.Size = new System.Drawing.Size(323, 356);
             this.choicesFlowPanel.TabIndex = 3;
+            // 
+            // gradientPanel3
+            // 
+            this.gradientPanel3.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.gradientPanel3.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.gradientPanel3.Controls.Add(this.btnAddChoice);
+            this.gradientPanel3.Controls.Add(this.label7);
+            this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gradientPanel3.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel3.Name = "gradientPanel3";
+            this.gradientPanel3.Size = new System.Drawing.Size(323, 56);
+            this.gradientPanel3.TabIndex = 2;
+            // 
+            // btnAddChoice
+            // 
+            this.btnAddChoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddChoice.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddChoice.FlatAppearance.BorderSize = 0;
+            this.btnAddChoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAddChoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnAddChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddChoice.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
+            this.btnAddChoice.Location = new System.Drawing.Point(272, 0);
+            this.btnAddChoice.Name = "btnAddChoice";
+            this.btnAddChoice.Size = new System.Drawing.Size(51, 56);
+            this.btnAddChoice.TabIndex = 2;
+            this.btnAddChoice.UseVisualStyleBackColor = false;
+            this.btnAddChoice.Click += new System.EventHandler(this.BtnAddChoice_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(23, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 24);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Sequence Choices";
             // 
             // propsPanel
             // 
@@ -603,6 +713,29 @@
             this.sqIdTextBox.Size = new System.Drawing.Size(160, 23);
             this.sqIdTextBox.TabIndex = 1;
             // 
+            // gradientPanel2
+            // 
+            this.gradientPanel2.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.gradientPanel2.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.gradientPanel2.Controls.Add(this.label2);
+            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel2.Name = "gradientPanel2";
+            this.gradientPanel2.Size = new System.Drawing.Size(323, 56);
+            this.gradientPanel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(23, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Properties";
+            // 
             // panelStatusBar
             // 
             this.panelStatusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(115)))), ((int)(((byte)(255)))));
@@ -692,142 +825,16 @@
             this.openFileDialog.Filter = "Hanna Project (*.hprj)|*.hprj";
             this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_FileOk);
             // 
-            // popupMessage
-            // 
-            this.popupMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.popupMessage.AutoSize = true;
-            this.popupMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F);
-            this.popupMessage.ForeColor = System.Drawing.Color.White;
-            this.popupMessage.Location = new System.Drawing.Point(21, 12);
-            this.popupMessage.Name = "popupMessage";
-            this.popupMessage.Size = new System.Drawing.Size(82, 18);
-            this.popupMessage.TabIndex = 0;
-            this.popupMessage.Text = "MESSAGE";
-            // 
             // popupTimer
             // 
             this.popupTimer.Interval = 3200;
             this.popupTimer.Tick += new System.EventHandler(this.PopupTimer_Tick);
             // 
-            // gradientPanel1
+            // exportGameFileDialog
             // 
-            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.gradientPanel1.Controls.Add(this.btnManageContainers);
-            this.gradientPanel1.Controls.Add(this.button1);
-            this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(332, 56);
-            this.gradientPanel1.TabIndex = 0;
-            // 
-            // btnManageContainers
-            // 
-            this.btnManageContainers.BackColor = System.Drawing.Color.Transparent;
-            this.btnManageContainers.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnManageContainers.FlatAppearance.BorderSize = 0;
-            this.btnManageContainers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnManageContainers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnManageContainers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageContainers.Image = global::Hanna_Studio.Properties.Resources.ic_container;
-            this.btnManageContainers.Location = new System.Drawing.Point(230, 0);
-            this.btnManageContainers.Name = "btnManageContainers";
-            this.btnManageContainers.Size = new System.Drawing.Size(51, 56);
-            this.btnManageContainers.TabIndex = 3;
-            this.btnManageContainers.UseVisualStyleBackColor = false;
-            this.btnManageContainers.Click += new System.EventHandler(this.BtnManageContainers_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
-            this.button1.Location = new System.Drawing.Point(281, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 56);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sequences";
-            // 
-            // gradientPanel3
-            // 
-            this.gradientPanel3.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.gradientPanel3.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.gradientPanel3.Controls.Add(this.btnAddChoice);
-            this.gradientPanel3.Controls.Add(this.label7);
-            this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gradientPanel3.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel3.Name = "gradientPanel3";
-            this.gradientPanel3.Size = new System.Drawing.Size(323, 56);
-            this.gradientPanel3.TabIndex = 2;
-            // 
-            // btnAddChoice
-            // 
-            this.btnAddChoice.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddChoice.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddChoice.FlatAppearance.BorderSize = 0;
-            this.btnAddChoice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnAddChoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnAddChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddChoice.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
-            this.btnAddChoice.Location = new System.Drawing.Point(272, 0);
-            this.btnAddChoice.Name = "btnAddChoice";
-            this.btnAddChoice.Size = new System.Drawing.Size(51, 56);
-            this.btnAddChoice.TabIndex = 2;
-            this.btnAddChoice.UseVisualStyleBackColor = false;
-            this.btnAddChoice.Click += new System.EventHandler(this.BtnAddChoice_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(23, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 24);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Sequence Choices";
-            // 
-            // gradientPanel2
-            // 
-            this.gradientPanel2.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.gradientPanel2.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.gradientPanel2.Controls.Add(this.label2);
-            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(323, 56);
-            this.gradientPanel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(23, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Properties";
+            this.exportGameFileDialog.DefaultExt = "hgm";
+            this.exportGameFileDialog.Filter = "Hanna Game (*.hgm)|*.hgm";
+            this.exportGameFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.ExportGameFileDialog_FileOk);
             // 
             // frmWorkspace
             // 
@@ -854,6 +861,8 @@
             this.masterSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.masterSplitContainer)).EndInit();
             this.masterSplitContainer.ResumeLayout(false);
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.consoleAreaPanel.ResumeLayout(false);
             this.runConfigPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -865,6 +874,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ultimateSplitContainer)).EndInit();
             this.ultimateSplitContainer.ResumeLayout(false);
             this.choicesContainerPanel.ResumeLayout(false);
+            this.gradientPanel3.ResumeLayout(false);
+            this.gradientPanel3.PerformLayout();
             this.propsPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -874,16 +885,12 @@
             this.panel2.PerformLayout();
             this.panelProp.ResumeLayout(false);
             this.panelProp.PerformLayout();
+            this.gradientPanel2.ResumeLayout(false);
+            this.gradientPanel2.PerformLayout();
             this.panelStatusBar.ResumeLayout(false);
             this.panelStatusBar.PerformLayout();
             this.workspacePanel.ResumeLayout(false);
             this.sequenceContextMenuStrip.ResumeLayout(false);
-            this.gradientPanel1.ResumeLayout(false);
-            this.gradientPanel1.PerformLayout();
-            this.gradientPanel3.ResumeLayout(false);
-            this.gradientPanel3.PerformLayout();
-            this.gradientPanel2.ResumeLayout(false);
-            this.gradientPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -954,5 +961,6 @@
         private System.Windows.Forms.Panel popupPanel;
         private System.Windows.Forms.Label popupMessage;
         private System.Windows.Forms.Timer popupTimer;
+        private System.Windows.Forms.SaveFileDialog exportGameFileDialog;
     }
 }

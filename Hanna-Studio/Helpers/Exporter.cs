@@ -158,14 +158,19 @@ namespace Hanna_Studio
 
         }
 
-
-        public bool exportToFile()
+        public bool exportToFile(bool exportgame = false, string exportlocation = "export.json") // exportLocation is set to export.json at first.
         {
-
+            string exportString = generateExportString(); // representing the game json export string
             try
             {
-                System.IO.StreamWriter writer = new System.IO.StreamWriter("export.json"); //open the file for writing.
-                writer.Write(generateExportString()); //write the current date to the file. change this with your date or something.
+                if (exportgame) {
+                    // if we're exporting the game (into an .hgm file).. use exportLocation for the export.. otherwise, just use "export.json" for running inside the studio (This will happen if the parameter remains its default value)
+                    // if we're exporting the game. The contents have to be encrypted
+                    exportString = CrossPlatformAESEncryption.Helper.CryptoHelper.Encrypt(exportString, Helpers.KEYS.getExportKey());
+                    // done. the string is now encrypted
+                }
+                System.IO.StreamWriter writer = new System.IO.StreamWriter(exportlocation); //open the file for writing.
+                writer.Write(exportString); //write the current date to the file. change this with your date or something.
                 writer.Close(); //remember to close the file again.
                 writer.Dispose(); //remember to dispose it from the memory.
                 return true;

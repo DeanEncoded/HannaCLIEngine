@@ -22,7 +22,6 @@ Your game is generally made of **sequences**. These are kind of like levels/stag
  - **sqType** (*the type of sequence to be run. It can either be an **ordinary** sequence [which has choices] or an **end** sequence [which displays its 'text' properties and ends the game]*)
  - **mainText** (*text that is primarily displayed when the the sequence runs*)
  - **secondaryText** (*text that is secondarily displayed when the the sequence runs*:: You can use this property to ask the player things like "What do you want to do?" or "Pick an item", things along those lines)
- - **mainText** (*text that is primarily displayed when the the sequence runs*)
  - **choices** (*choices are what they say they are. Your sequence can have multiple choices that the player can select from. Choices also have their own properties*)
 	 - **choiceLetter** (*choices have letters assigned to them. The player uses letters to pick a choice from a list of choices*)
 	 - **choiceType** (*choices have two types. They can either be **set** or **conditional**. A set choice always appears when a sequence is run and a conditional choice only appears if a certain condition is met*)
