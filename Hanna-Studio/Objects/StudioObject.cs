@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using Hanna_Studio.NodeEditor;
 
 namespace Hanna_Studio
 {
@@ -21,12 +22,16 @@ namespace Hanna_Studio
 
         public Dictionary<string, Sequence> sequences { get; set; }
 
-        public StudioObject(string projectName, string projectAuthor, string projectDescription, List<String> projectContainers, Dictionary<string, Sequence> sequences) {
+        // Node Editor state for saving/loading visual layout
+        public NodeEditorState nodeEditorState { get; set; }
+
+        public StudioObject(string projectName, string projectAuthor, string projectDescription, List<String> projectContainers, Dictionary<string, Sequence> sequences, NodeEditorState nodeEditorState = null) {
             this.projectName = projectName;
             this.projectAuthor = projectAuthor;
             this.projectContainers = projectContainers;
             this.projectDescription = projectDescription;
             this.sequences = sequences;
+            this.nodeEditorState = nodeEditorState;
         }
 
     }

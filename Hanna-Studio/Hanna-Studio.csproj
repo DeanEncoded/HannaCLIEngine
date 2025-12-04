@@ -124,6 +124,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helpers\KEYS.cs" />
+    <Compile Include="NodeEditor\NodeEditorCanvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NodeEditor\NodeEditorPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NodeEditor\SequenceNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\EngineObjects.cs" />

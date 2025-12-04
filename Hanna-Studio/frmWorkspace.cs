@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hanna_Studio.NodeEditor;
 
 namespace Hanna_Studio
 {
@@ -35,6 +36,13 @@ namespace Hanna_Studio
         // Project File for remembering where to save a project
         private string projectFile;
 
+        // Node Editor
+        private NodeEditorPanel nodeEditorPanel;
+        private NodeEditorState nodeEditorState;
+        private SplitContainer nodeEditorSplitContainer;
+        private ToolStripMenuItem viewNodeEditorMenuItem;
+        private ToolStripMenuItem viewConsoleMenuItem;
+
         public frmWorkspace(string gameTitle = "New Project", string gameAuthor = "New Author", string gameDescription = "No Description", bool newProject = true, string projectFile = null)
         {
             InitializeComponent();
@@ -43,6 +51,12 @@ namespace Hanna_Studio
 
             // init projectContainers
             projectContainers = new List<String>();
+
+            // Initialize Node Editor
+            InitializeNodeEditor();
+
+            // Add View menu
+            AddViewMenu();
 
             // if this is a new project. Go ahead and just leave it be. But name it with what came from the user
             if (newProject)
@@ -70,7 +84,12 @@ namespace Hanna_Studio
 
                 // load our sequences as well
                 mySequences = so.sequences;
-                // also remember this projectFile for future reference
+
+                // Load node editor state if available
+                if (so.nodeEditorState != null)
+                {
+                    nodeEditorState = so.nodeEditorState;
+                }
 
                 displaySequences();
             }
@@ -79,6 +98,181 @@ namespace Hanna_Studio
 
             workspaceConsole.InternalRichTextBox.BorderStyle = BorderStyle.None; // removing 3D border from the Console RichTextBox
 
+        }
+
+        private void InitializeNodeEditor()
+        {
+            // Create a split container to hold both node editor and console
+            nodeEditorSplitContainer = new SplitContainer
+            {
+                Dock = DockStyle.Fill,
+                Orientation = Orientation.Horizontal,
+                SplitterDistance = 400,
+                BackColor = Color.FromArgb(30, 30, 30),
+                SplitterWidth = 6
+            };
+
+            // Create node editor panel
+            nodeEditorPanel = new NodeEditorPanel(this);
+            nodeEditorPanel.Dock = DockStyle.Fill;
+
+            // Wire up events
+            nodeEditorPanel.SequenceSelected += NodeEditor_SequenceSelected;
+            nodeEditorPanel.SequenceDoubleClicked += NodeEditor_SequenceDoubleClicked;
+            nodeEditorPanel.RequestDeleteSequence += NodeEditor_RequestDeleteSequence;
+            nodeEditorPanel.RequestNewSequence += NodeEditor_RequestNewSequence;
+
+            // Move existing console to panel2
+            consoleAreaPanel.Controls.Remove(workspaceConsole);
+
+            // Create a panel to hold console with header
+            var consolePanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.Black
+            };
+
+            var consoleHeader = new Panel
+            {
+                Dock = DockStyle.Top,
+                Height = 28,
+                BackColor = Color.FromArgb(45, 45, 48)
+            };
+
+            var consoleLabel = new Label
+            {
+                Text = "Console Output",
+                ForeColor = Color.White,
+                AutoSize = true,
+                Location = new Point(10, 6),
+                Font = new Font("Segoe UI", 9f)
+            };
+
+            consoleHeader.Controls.Add(consoleLabel);
+            consolePanel.Controls.Add(workspaceConsole);
+            consolePanel.Controls.Add(consoleHeader);
+            workspaceConsole.Dock = DockStyle.Fill;
+
+            // Add to split container
+            nodeEditorSplitContainer.Panel1.Controls.Add(nodeEditorPanel);
+            nodeEditorSplitContainer.Panel2.Controls.Add(consolePanel);
+
+            // Add split container to console area
+            consoleAreaPanel.Controls.Add(nodeEditorSplitContainer);
+        }
+
+        private void AddViewMenu()
+        {
+            // Create View menu
+            var viewMenu = new ToolStripMenuItem("View");
+
+            viewNodeEditorMenuItem = new ToolStripMenuItem("Node Editor")
+            {
+                Checked = true,
+                CheckOnClick = true
+            };
+            viewNodeEditorMenuItem.Click += (s, e) =>
+            {
+                nodeEditorSplitContainer.Panel1Collapsed = !viewNodeEditorMenuItem.Checked;
+            };
+
+            viewConsoleMenuItem = new ToolStripMenuItem("Console")
+            {
+                Checked = true,
+                CheckOnClick = true
+            };
+            viewConsoleMenuItem.Click += (s, e) =>
+            {
+                nodeEditorSplitContainer.Panel2Collapsed = !viewConsoleMenuItem.Checked;
+            };
+
+            var fitNodesMenuItem = new ToolStripMenuItem("Fit All Nodes")
+            {
+                ShortcutKeys = Keys.Control | Keys.F
+            }; ;
+            fitNodesMenuItem.Click += (s, e) =>
+            {
+                nodeEditorPanel?.Canvas?.FitAllNodes();
+            };
+
+            var resetViewMenuItem = new ToolStripMenuItem("Reset View")
+            {
+                ShortcutKeys = Keys.Control | Keys.Home
+            };
+            resetViewMenuItem.Click += (s, e) =>
+            {
+                nodeEditorPanel?.Canvas?.ResetView();
+            };
+
+            viewMenu.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                viewNodeEditorMenuItem,
+                viewConsoleMenuItem,
+                new ToolStripSeparator(),
+                fitNodesMenuItem,
+                resetViewMenuItem
+            });
+
+            // Insert after Edit menu
+            workspaceMenuStrip.Items.Insert(2, viewMenu);
+        }
+
+        private void NodeEditor_SequenceSelected(object sender, string sequenceId)
+        {
+            if (!string.IsNullOrEmpty(sequenceId))
+            {
+                showSequenceProps(sequenceId);
+            }
+            else
+            {
+                clearsqInProp();
+            }
+        }
+
+        private void NodeEditor_SequenceDoubleClicked(object sender, string sequenceId)
+        {
+            if (!string.IsNullOrEmpty(sequenceId))
+            {
+                showSequenceProps(sequenceId);
+                // Open edit dialog for mainText
+                dlgEditProperty dlg = new dlgEditProperty("mainText", this);
+                dlg.ShowDialog();
+            }
+        }
+
+        private void NodeEditor_RequestDeleteSequence(object sender, string sequenceId)
+        {
+            if (!string.IsNullOrEmpty(sequenceId))
+            {
+                var result = MessageBox.Show($"Are you sure you want to delete sequence '{sequenceId}'?",
+                    "Delete Sequence", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    deleteSequence(sequenceId);
+                }
+            }
+        }
+
+        private void NodeEditor_RequestNewSequence(object sender, Point position)
+        {
+            dlgNewSequence newSequence = new dlgNewSequence(this, new PointF(position.X, position.Y));
+            newSequence.ShowDialog();
+        }
+
+        private void SyncNodeEditor()
+        {
+            if (nodeEditorPanel != null)
+            {
+                nodeEditorPanel.SyncWithSequences(mySequences, comboBoxStartSq.Text);
+
+                // Load saved state if available
+                if (nodeEditorState != null)
+                {
+                    nodeEditorPanel.LoadState(nodeEditorState);
+                    nodeEditorState = null; // Clear after loading
+                }
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -105,6 +299,10 @@ namespace Hanna_Studio
         }
 
         public void createSequence(string sqid, bool endsq) {
+            createSequence(sqid, endsq, null);
+        }
+
+        public void createSequence(string sqid, bool endsq, PointF? nodePosition) {
             // check if this sequence exists or not
             if (!mySequences.ContainsKey(sqid)) // I should really look into these already-available functions, they help a lot
             {
@@ -118,6 +316,13 @@ namespace Hanna_Studio
                 // Add new sequence to sequences dictionary
                 mySequences.Add(sqid, newSequence);
                 loadSequencesIntoStartSq();
+
+                // Add to node editor
+                if (nodeEditorPanel != null)
+                {
+                    var node = nodeEditorPanel.AddSequenceNode(sqid, newSequence, nodePosition);
+                    nodeEditorPanel.Canvas.CenterOnNode(node);
+                }
             }
             else {
                 // nope... you can't create that sequence
@@ -135,6 +340,24 @@ namespace Hanna_Studio
             Choice newChoice = new Choice(choiceLetter, choiceType, choiceCondition, choiceText, outcomeText, containerAdd, containerAddValue, nextSq);
             // Add new choice to current sequence choices
             getCurrentSequence().choices.Add(choiceLetter, newChoice);
+
+            // Update node editor
+            if (nodeEditorPanel != null)
+            {
+                var currentSeq = getCurrentSequence();
+                nodeEditorPanel.UpdateSequenceNode(currentSeq.id, currentSeq);
+
+                // Add connection if nextSq is specified
+                if (!string.IsNullOrEmpty(nextSq))
+                {
+                    var sourceNode = nodeEditorPanel.Canvas.FindNodeBySequenceId(currentSeq.id);
+                    var targetNode = nodeEditorPanel.Canvas.FindNodeBySequenceId(nextSq);
+                    if (sourceNode != null && targetNode != null)
+                    {
+                        nodeEditorPanel.Canvas.AddConnection(sourceNode, choiceLetter, targetNode);
+                    }
+                }
+            }
         }
 
         public void editChoice(string choiceLetter, string choiceType, List<string> choiceCondition, string choiceText, string outcomeText, string containerAdd, string containerAddValue, string nextSq)
@@ -142,6 +365,29 @@ namespace Hanna_Studio
             Choice newChoice = new Choice(choiceLetter, choiceType, choiceCondition, choiceText, outcomeText, containerAdd, containerAddValue, nextSq);
             // Add new choice to current sequence choices
             getCurrentSequence().choices[choiceLetter] = newChoice;
+
+            // Update node editor connections
+            if (nodeEditorPanel != null)
+            {
+                var currentSeq = getCurrentSequence();
+                var sourceNode = nodeEditorPanel.Canvas.FindNodeBySequenceId(currentSeq.id);
+                
+                if (sourceNode != null)
+                {
+                    // Remove old connections for this choice
+                    nodeEditorPanel.Canvas.RemoveConnectionsForChoice(sourceNode, choiceLetter);
+
+                    // Add new connection if nextSq is specified
+                    if (!string.IsNullOrEmpty(nextSq))
+                    {
+                        var targetNode = nodeEditorPanel.Canvas.FindNodeBySequenceId(nextSq);
+                        if (targetNode != null)
+                        {
+                            nodeEditorPanel.Canvas.AddConnection(sourceNode, choiceLetter, targetNode);
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -166,11 +412,29 @@ namespace Hanna_Studio
                     }
                 }
             }
+
+            // Remove from node editor
+            if (nodeEditorPanel != null)
+            {
+                nodeEditorPanel.RemoveSequenceNode(sqid);
+            }
+
             loadSequencesIntoStartSq();
         }
         public void deleteChoice(string sqid, string letter)
         {
             mySequences[sqid].choices.Remove(letter);
+
+            // Update node editor
+            if (nodeEditorPanel != null)
+            {
+                var sourceNode = nodeEditorPanel.Canvas.FindNodeBySequenceId(sqid);
+                if (sourceNode != null)
+                {
+                    nodeEditorPanel.Canvas.RemoveConnectionsForChoice(sourceNode, letter);
+                    nodeEditorPanel.UpdateSequenceNode(sqid, mySequences[sqid]);
+                }
+            }
         }
         public void clearsqInProp() {
             sqInProp = null;
@@ -244,6 +508,9 @@ namespace Hanna_Studio
                 // that should work right???
             }
             loadSequencesIntoStartSq();
+
+            // Sync node editor after loading sequences
+            SyncNodeEditor();
         }
 
         private void displayChoices() {
@@ -344,7 +611,14 @@ namespace Hanna_Studio
         }
 
         private void writeToFile(string filePath) {
-            StudioObject so = new StudioObject(gameTitle, gameAuthor,projectDescription:gameDescription, projectContainers, mySequences);
+            // Save node editor state
+            NodeEditorState editorState = null;
+            if (nodeEditorPanel != null)
+            {
+                editorState = nodeEditorPanel.GetState();
+            }
+
+            StudioObject so = new StudioObject(gameTitle, gameAuthor, projectDescription:gameDescription, projectContainers, mySequences, editorState);
             BinarySystem bs = new BinarySystem();
             bs.WriteToBinaryFile<StudioObject>(filePath, so);
             //MessageBox.Show("Project Saved!");
@@ -389,6 +663,12 @@ namespace Hanna_Studio
                 // set current sequence as ordinary sequence
                 mySequences[sqInProp].type = "ordinary";
             }
+
+            // Update node editor
+            if (nodeEditorPanel != null)
+            {
+                nodeEditorPanel.UpdateSequenceNode(sqInProp, mySequences[sqInProp]);
+            }
         }
 
         private void ExportProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -427,6 +707,12 @@ namespace Hanna_Studio
                 mySequences[sqidUsed].secondaryText = text;
             }
             if(sqid == null || sqid == sqInProp) showSequenceProps(sqInProp);
+
+            // Update node editor
+            if (nodeEditorPanel != null && mySequences.ContainsKey(sqidUsed))
+            {
+                nodeEditorPanel.UpdateSequenceNode(sqidUsed, mySequences[sqidUsed]);
+            }
         }
 
         private void SaveASToolStripMenuItem_Click(object sender, EventArgs e)
@@ -495,6 +781,13 @@ namespace Hanna_Studio
                     workspaceConsole.StartProcess("hannacli", _params);
                     // change status bar
                     updateStatusbar("Running " + gameTitle, statusBarColorRunning);
+
+                    // Show console when running
+                    if (nodeEditorSplitContainer != null && nodeEditorSplitContainer.Panel2Collapsed)
+                    {
+                        nodeEditorSplitContainer.Panel2Collapsed = false;
+                        if (viewConsoleMenuItem != null) viewConsoleMenuItem.Checked = true;
+                    }
                 }
             }
             else {

@@ -15,18 +15,19 @@ namespace Hanna_Studio
     {
 
         frmWorkspace refWorkspace;
+        private PointF? nodePosition;
 
-        public dlgNewSequence(frmWorkspace workspace)
+        public dlgNewSequence(frmWorkspace workspace, PointF? position = null)
         {
             InitializeComponent();
             refWorkspace = workspace;
-            //this.Sw
+            nodePosition = position;
         }
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
             this.Close();
-            refWorkspace.createSequence(textBoxSequenceId.Text,checkBoxEndsq.Checked);
+            refWorkspace.createSequence(textBoxSequenceId.Text, checkBoxEndsq.Checked, nodePosition);
         }
 
         private void DlgNewSequence_Load(object sender, EventArgs e)
