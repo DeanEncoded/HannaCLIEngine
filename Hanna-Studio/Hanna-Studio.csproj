@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Objects\StudioDBObjects.cs" />
     <Compile Include="Objects\StudioObject.cs" />
+    <Compile Include="UI\UIStyles.cs" />
     <EmbeddedResource Include="Dialogs\dlgAboutHanna.resx">
       <DependentUpon>dlgAboutHanna.cs</DependentUpon>
     </EmbeddedResource>
