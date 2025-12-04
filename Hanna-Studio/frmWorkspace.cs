@@ -271,9 +271,12 @@ namespace Hanna_Studio
             btnRunP.ForeColor = Color.White;
             btnRunP.Font = UIStyles.FontMedium;
             btnRunP.FlatAppearance.BorderSize = 0;
+            btnRunP.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 180, 100);
+            btnRunP.FlatAppearance.MouseDownBackColor = Color.FromArgb(60, 140, 60);
             btnRunP.Text = "▶  Run";
             btnRunP.Size = new Size(100, 36);
             btnRunP.Location = new Point(10, 8);
+            btnRunP.Cursor = Cursors.Hand;
 
             // Style Stop button
             btnStopP.FlatStyle = FlatStyle.Flat;
@@ -282,20 +285,111 @@ namespace Hanna_Studio
             btnStopP.Font = UIStyles.FontMedium;
             btnStopP.FlatAppearance.BorderSize = 1;
             btnStopP.FlatAppearance.BorderColor = UIStyles.BorderDark;
+            btnStopP.FlatAppearance.MouseOverBackColor = UIStyles.AccentRed;
+            btnStopP.FlatAppearance.MouseDownBackColor = Color.FromArgb(150, 50, 50);
             btnStopP.Text = "■  Stop";
             btnStopP.Size = new Size(90, 36);
             btnStopP.Location = new Point(118, 8);
+            btnStopP.Cursor = Cursors.Hand;
+
+            // Style the right panel containing debug and start sequence
+            panel1.BackColor = UIStyles.BackgroundLight;
+            panel1.Dock = DockStyle.Right;
+            panel1.Width = 360;
+            panel1.Padding = new Padding(0);
+
+            // Clear and rebuild panel1 with styled controls
+            panel1.Controls.Clear();
+
+            // Create a toggle button for debug mode instead of checkbox
+            var debugToggle = new Button
+            {
+                Text = "Debug",
+                Font = UIStyles.FontMedium,
+                ForeColor = UIStyles.TextSecondary,
+                BackColor = UIStyles.BackgroundPanel,
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(90, 36),
+                Location = new Point(10, 8),
+                Cursor = Cursors.Hand,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            debugToggle.FlatAppearance.BorderSize = 1;
+            debugToggle.FlatAppearance.BorderColor = UIStyles.BorderDark;
+            debugToggle.FlatAppearance.MouseOverBackColor = UIStyles.BackgroundHover;
+
+            // Sync initial state
+            UpdateDebugToggleAppearance(debugToggle, checkBoxDebugMode.Checked);
+
+            debugToggle.Click += (s, e) =>
+            {
+                checkBoxDebugMode.Checked = !checkBoxDebugMode.Checked;
+                UpdateDebugToggleAppearance(debugToggle, checkBoxDebugMode.Checked);
+            };
+
+            // Create start sequence label
+            var startLabel = new Label
+            {
+                Text = "START SEQUENCE",
+                Font = new Font("Segoe UI", 7f, FontStyle.Bold),
+                ForeColor = UIStyles.TextMuted,
+                AutoSize = true,
+                Location = new Point(115, 4),
+                BackColor = Color.Transparent
+            };
+
+            // Style the combo box container
+            var comboContainer = new Panel
+            {
+                Size = new Size(220, 32),
+                Location = new Point(112, 16),
+                BackColor = UIStyles.BackgroundDark,
+                Padding = new Padding(1)
+            };
+            comboContainer.Paint += (s, e) =>
+            {
+                using (var pen = new Pen(UIStyles.BorderDark))
+                {
+                    e.Graphics.DrawRectangle(pen, 0, 0, comboContainer.Width - 1, comboContainer.Height - 1);
+                }
+            };
 
             // Style combo box
+            comboBoxStartSq.Parent = comboContainer;
             comboBoxStartSq.BackColor = UIStyles.BackgroundDark;
             comboBoxStartSq.ForeColor = UIStyles.TextPrimary;
             comboBoxStartSq.Font = UIStyles.FontRegular;
             comboBoxStartSq.FlatStyle = FlatStyle.Flat;
-            comboBoxStartSq.Size = new Size(160, 28);
+            comboBoxStartSq.Location = new Point(4, 4);
+            comboBoxStartSq.Size = new Size(212, 24);
+            comboBoxStartSq.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // Style label
-            label4.Font = UIStyles.FontSmall;
-            label4.ForeColor = UIStyles.TextMuted;
+            // Add controls to panel1
+            panel1.Controls.Add(debugToggle);
+            panel1.Controls.Add(startLabel);
+            panel1.Controls.Add(comboContainer);
+
+            // Hide original controls that are replaced
+            checkBoxDebugMode.Visible = false;
+            label4.Visible = false;
+        }
+
+        private void UpdateDebugToggleAppearance(Button toggle, bool isChecked)
+        {
+            if (isChecked)
+            {
+                toggle.BackColor = UIStyles.AccentBlue;
+                toggle.ForeColor = Color.White;
+                toggle.FlatAppearance.BorderColor = UIStyles.AccentBlue;
+                toggle.Text = "● Debug";
+            }
+            else
+            {
+                toggle.BackColor = UIStyles.BackgroundPanel;
+                toggle.ForeColor = UIStyles.TextSecondary;
+                toggle.FlatAppearance.BorderColor = UIStyles.BorderDark;
+                toggle.Text = "○ Debug";
+            }
         }
 
         private void StyleContextMenus()

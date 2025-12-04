@@ -131,7 +131,8 @@
             this.helpToolStripMenuItem});
             this.workspaceMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.workspaceMenuStrip.Name = "workspaceMenuStrip";
-            this.workspaceMenuStrip.Size = new System.Drawing.Size(1327, 28);
+            this.workspaceMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.workspaceMenuStrip.Size = new System.Drawing.Size(997, 24);
             this.workspaceMenuStrip.TabIndex = 0;
             this.workspaceMenuStrip.Text = "menuStrip1";
             // 
@@ -143,34 +144,34 @@
             this.saveToolStripMenuItem,
             this.saveASToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProjectToolStripMenuItem_Click);
             // 
             // openProjectToolStripMenuItem
             // 
             this.openProjectToolStripMenuItem.Name = "openProjectToolStripMenuItem";
-            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.openProjectToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.openProjectToolStripMenuItem.Text = "Open Project";
             this.openProjectToolStripMenuItem.Click += new System.EventHandler(this.OpenProjectToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // saveASToolStripMenuItem
             // 
             this.saveASToolStripMenuItem.Name = "saveASToolStripMenuItem";
-            this.saveASToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.saveASToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.saveASToolStripMenuItem.Text = "Save AS";
             this.saveASToolStripMenuItem.Click += new System.EventHandler(this.SaveASToolStripMenuItem_Click);
             // 
@@ -180,13 +181,13 @@
             this.findToolStripMenuItem});
             this.editToolStripMenuItem.Enabled = false;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
             this.findToolStripMenuItem.Text = "Find";
             // 
             // exportToolStripMenuItem
@@ -195,19 +196,19 @@
             this.editProjectMetadataToolStripMenuItem,
             this.exportProjectToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.exportToolStripMenuItem.Text = "Project";
             // 
             // editProjectMetadataToolStripMenuItem
             // 
             this.editProjectMetadataToolStripMenuItem.Name = "editProjectMetadataToolStripMenuItem";
-            this.editProjectMetadataToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.editProjectMetadataToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.editProjectMetadataToolStripMenuItem.Text = "Edit Project Metadata";
             // 
             // exportProjectToolStripMenuItem
             // 
             this.exportProjectToolStripMenuItem.Name = "exportProjectToolStripMenuItem";
-            this.exportProjectToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.exportProjectToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.exportProjectToolStripMenuItem.Text = "Export Game";
             this.exportProjectToolStripMenuItem.Click += new System.EventHandler(this.ExportProjectToolStripMenuItem_Click);
             // 
@@ -216,13 +217,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutHannaStudioToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutHannaStudioToolStripMenuItem
             // 
             this.aboutHannaStudioToolStripMenuItem.Name = "aboutHannaStudioToolStripMenuItem";
-            this.aboutHannaStudioToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.aboutHannaStudioToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aboutHannaStudioToolStripMenuItem.Text = "About Hanna Studio";
             this.aboutHannaStudioToolStripMenuItem.Click += new System.EventHandler(this.AboutHannaStudioToolStripMenuItem_Click);
             // 
@@ -230,6 +231,7 @@
             // 
             this.masterSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.masterSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.masterSplitContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.masterSplitContainer.Name = "masterSplitContainer";
             // 
             // masterSplitContainer.Panel1
@@ -242,17 +244,19 @@
             this.masterSplitContainer.Panel2.BackColor = System.Drawing.Color.Black;
             this.masterSplitContainer.Panel2.Controls.Add(this.consoleAreaPanel);
             this.masterSplitContainer.Panel2.Controls.Add(this.runConfigPanel);
-            this.masterSplitContainer.Size = new System.Drawing.Size(1000, 694);
-            this.masterSplitContainer.SplitterDistance = 332;
+            this.masterSplitContainer.Size = new System.Drawing.Size(751, 569);
+            this.masterSplitContainer.SplitterDistance = 249;
+            this.masterSplitContainer.SplitterWidth = 3;
             this.masterSplitContainer.TabIndex = 1;
             // 
             // sqFlowPanel
             // 
             this.sqFlowPanel.AutoScroll = true;
             this.sqFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sqFlowPanel.Location = new System.Drawing.Point(0, 56);
+            this.sqFlowPanel.Location = new System.Drawing.Point(0, 46);
+            this.sqFlowPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sqFlowPanel.Name = "sqFlowPanel";
-            this.sqFlowPanel.Size = new System.Drawing.Size(332, 638);
+            this.sqFlowPanel.Size = new System.Drawing.Size(249, 523);
             this.sqFlowPanel.TabIndex = 2;
             // 
             // gradientPanel1
@@ -264,9 +268,12 @@
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(332, 56);
+            this.gradientPanel1.ShowBottomBorder = true;
+            this.gradientPanel1.Size = new System.Drawing.Size(249, 46);
             this.gradientPanel1.TabIndex = 0;
+            this.gradientPanel1.UseGradient = false;
             // 
             // btnManageContainers
             // 
@@ -277,9 +284,10 @@
             this.btnManageContainers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.btnManageContainers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageContainers.Image = global::Hanna_Studio.Properties.Resources.ic_container;
-            this.btnManageContainers.Location = new System.Drawing.Point(230, 0);
+            this.btnManageContainers.Location = new System.Drawing.Point(173, 0);
+            this.btnManageContainers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnManageContainers.Name = "btnManageContainers";
-            this.btnManageContainers.Size = new System.Drawing.Size(51, 56);
+            this.btnManageContainers.Size = new System.Drawing.Size(38, 46);
             this.btnManageContainers.TabIndex = 3;
             this.btnManageContainers.UseVisualStyleBackColor = false;
             this.btnManageContainers.Click += new System.EventHandler(this.BtnManageContainers_Click);
@@ -293,9 +301,10 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
-            this.button1.Location = new System.Drawing.Point(281, 0);
+            this.button1.Location = new System.Drawing.Point(211, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 56);
+            this.button1.Size = new System.Drawing.Size(38, 46);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -306,9 +315,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 17);
+            this.label1.Location = new System.Drawing.Point(20, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.Size = new System.Drawing.Size(82, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sequences";
             // 
@@ -316,9 +326,10 @@
             // 
             this.consoleAreaPanel.Controls.Add(this.workspaceConsole);
             this.consoleAreaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.consoleAreaPanel.Location = new System.Drawing.Point(0, 56);
+            this.consoleAreaPanel.Location = new System.Drawing.Point(0, 46);
+            this.consoleAreaPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.consoleAreaPanel.Name = "consoleAreaPanel";
-            this.consoleAreaPanel.Size = new System.Drawing.Size(664, 638);
+            this.consoleAreaPanel.Size = new System.Drawing.Size(499, 523);
             this.consoleAreaPanel.TabIndex = 3;
             // 
             // workspaceConsole
@@ -326,11 +337,10 @@
             this.workspaceConsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workspaceConsole.IsInputEnabled = true;
             this.workspaceConsole.Location = new System.Drawing.Point(0, 0);
-            this.workspaceConsole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.workspaceConsole.Name = "workspaceConsole";
             this.workspaceConsole.SendKeyboardCommandsToProcess = false;
             this.workspaceConsole.ShowDiagnostics = false;
-            this.workspaceConsole.Size = new System.Drawing.Size(664, 638);
+            this.workspaceConsole.Size = new System.Drawing.Size(499, 523);
             this.workspaceConsole.TabIndex = 1;
             this.workspaceConsole.OnConsoleOutput += new ConsoleControl.ConsoleEventHanlder(this.WorkspaceConsole_OnConsoleOutput);
             // 
@@ -342,8 +352,9 @@
             this.runConfigPanel.Controls.Add(this.btnRunP);
             this.runConfigPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.runConfigPanel.Location = new System.Drawing.Point(0, 0);
+            this.runConfigPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.runConfigPanel.Name = "runConfigPanel";
-            this.runConfigPanel.Size = new System.Drawing.Size(664, 56);
+            this.runConfigPanel.Size = new System.Drawing.Size(499, 46);
             this.runConfigPanel.TabIndex = 2;
             // 
             // btnStopP
@@ -354,9 +365,10 @@
             this.btnStopP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStopP.ForeColor = System.Drawing.Color.White;
             this.btnStopP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStopP.Location = new System.Drawing.Point(161, 8);
+            this.btnStopP.Location = new System.Drawing.Point(121, 6);
+            this.btnStopP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStopP.Name = "btnStopP";
-            this.btnStopP.Size = new System.Drawing.Size(104, 41);
+            this.btnStopP.Size = new System.Drawing.Size(78, 33);
             this.btnStopP.TabIndex = 7;
             this.btnStopP.Text = "Stop";
             this.btnStopP.UseVisualStyleBackColor = false;
@@ -368,9 +380,10 @@
             this.panel1.Controls.Add(this.comboBoxStartSq);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(271, 0);
+            this.panel1.Location = new System.Drawing.Point(204, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(393, 56);
+            this.panel1.Size = new System.Drawing.Size(295, 46);
             this.panel1.TabIndex = 2;
             // 
             // checkBoxDebugMode
@@ -378,13 +391,13 @@
             this.checkBoxDebugMode.AutoSize = true;
             this.checkBoxDebugMode.Depth = 0;
             this.checkBoxDebugMode.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkBoxDebugMode.Location = new System.Drawing.Point(0, 16);
+            this.checkBoxDebugMode.Location = new System.Drawing.Point(0, 7);
             this.checkBoxDebugMode.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxDebugMode.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBoxDebugMode.MouseState = MaterialSkin.MouseState.HOVER;
             this.checkBoxDebugMode.Name = "checkBoxDebugMode";
             this.checkBoxDebugMode.Ripple = true;
-            this.checkBoxDebugMode.Size = new System.Drawing.Size(80, 30);
+            this.checkBoxDebugMode.Size = new System.Drawing.Size(69, 30);
             this.checkBoxDebugMode.TabIndex = 10;
             this.checkBoxDebugMode.Text = "Debug";
             this.checkBoxDebugMode.UseVisualStyleBackColor = true;
@@ -397,9 +410,10 @@
             this.comboBoxStartSq.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.comboBoxStartSq.ForeColor = System.Drawing.Color.White;
             this.comboBoxStartSq.FormattingEnabled = true;
-            this.comboBoxStartSq.Location = new System.Drawing.Point(218, 9);
+            this.comboBoxStartSq.Location = new System.Drawing.Point(164, 7);
+            this.comboBoxStartSq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxStartSq.Name = "comboBoxStartSq";
-            this.comboBoxStartSq.Size = new System.Drawing.Size(154, 37);
+            this.comboBoxStartSq.Size = new System.Drawing.Size(116, 30);
             this.comboBoxStartSq.TabIndex = 15;
             // 
             // label4
@@ -407,9 +421,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(91, 20);
+            this.label4.Location = new System.Drawing.Point(68, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 18);
+            this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 16;
             this.label4.Text = "Start Sequence";
             // 
@@ -420,9 +435,10 @@
             this.btnRunP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunP.ForeColor = System.Drawing.Color.White;
             this.btnRunP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRunP.Location = new System.Drawing.Point(12, 8);
+            this.btnRunP.Location = new System.Drawing.Point(9, 6);
+            this.btnRunP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRunP.Name = "btnRunP";
-            this.btnRunP.Size = new System.Drawing.Size(135, 41);
+            this.btnRunP.Size = new System.Drawing.Size(101, 33);
             this.btnRunP.TabIndex = 6;
             this.btnRunP.Text = "Run Game";
             this.btnRunP.UseVisualStyleBackColor = false;
@@ -433,10 +449,10 @@
             this.popupPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.popupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(115)))), ((int)(((byte)(255)))));
             this.popupPanel.Controls.Add(this.popupMessage);
-            this.popupPanel.Location = new System.Drawing.Point(30, 630);
-            this.popupPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.popupPanel.Location = new System.Drawing.Point(22, 512);
+            this.popupPanel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.popupPanel.Name = "popupPanel";
-            this.popupPanel.Size = new System.Drawing.Size(299, 42);
+            this.popupPanel.Size = new System.Drawing.Size(224, 34);
             this.popupPanel.TabIndex = 2;
             this.popupPanel.Visible = false;
             // 
@@ -446,9 +462,10 @@
             this.popupMessage.AutoSize = true;
             this.popupMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F);
             this.popupMessage.ForeColor = System.Drawing.Color.White;
-            this.popupMessage.Location = new System.Drawing.Point(21, 12);
+            this.popupMessage.Location = new System.Drawing.Point(16, 10);
+            this.popupMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.popupMessage.Name = "popupMessage";
-            this.popupMessage.Size = new System.Drawing.Size(82, 18);
+            this.popupMessage.Size = new System.Drawing.Size(66, 15);
             this.popupMessage.TabIndex = 0;
             this.popupMessage.Text = "MESSAGE";
             // 
@@ -456,6 +473,7 @@
             // 
             this.ultimateSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultimateSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.ultimateSplitContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ultimateSplitContainer.Name = "ultimateSplitContainer";
             // 
             // ultimateSplitContainer.Panel1
@@ -468,8 +486,9 @@
             this.ultimateSplitContainer.Panel2.Controls.Add(this.choicesContainerPanel);
             this.ultimateSplitContainer.Panel2.Controls.Add(this.propsPanel);
             this.ultimateSplitContainer.Panel2.Controls.Add(this.gradientPanel2);
-            this.ultimateSplitContainer.Size = new System.Drawing.Size(1327, 694);
-            this.ultimateSplitContainer.SplitterDistance = 1000;
+            this.ultimateSplitContainer.Size = new System.Drawing.Size(997, 569);
+            this.ultimateSplitContainer.SplitterDistance = 751;
+            this.ultimateSplitContainer.SplitterWidth = 3;
             this.ultimateSplitContainer.TabIndex = 2;
             // 
             // choicesContainerPanel
@@ -478,18 +497,20 @@
             this.choicesContainerPanel.Controls.Add(this.gradientPanel3);
             this.choicesContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.choicesContainerPanel.Enabled = false;
-            this.choicesContainerPanel.Location = new System.Drawing.Point(0, 282);
+            this.choicesContainerPanel.Location = new System.Drawing.Point(0, 230);
+            this.choicesContainerPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.choicesContainerPanel.Name = "choicesContainerPanel";
-            this.choicesContainerPanel.Size = new System.Drawing.Size(323, 412);
+            this.choicesContainerPanel.Size = new System.Drawing.Size(243, 339);
             this.choicesContainerPanel.TabIndex = 3;
             // 
             // choicesFlowPanel
             // 
             this.choicesFlowPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.choicesFlowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.choicesFlowPanel.Location = new System.Drawing.Point(0, 56);
+            this.choicesFlowPanel.Location = new System.Drawing.Point(0, 46);
+            this.choicesFlowPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.choicesFlowPanel.Name = "choicesFlowPanel";
-            this.choicesFlowPanel.Size = new System.Drawing.Size(323, 356);
+            this.choicesFlowPanel.Size = new System.Drawing.Size(243, 293);
             this.choicesFlowPanel.TabIndex = 3;
             // 
             // gradientPanel3
@@ -500,9 +521,12 @@
             this.gradientPanel3.Controls.Add(this.label7);
             this.gradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradientPanel3.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradientPanel3.Name = "gradientPanel3";
-            this.gradientPanel3.Size = new System.Drawing.Size(323, 56);
+            this.gradientPanel3.ShowBottomBorder = true;
+            this.gradientPanel3.Size = new System.Drawing.Size(243, 46);
             this.gradientPanel3.TabIndex = 2;
+            this.gradientPanel3.UseGradient = false;
             // 
             // btnAddChoice
             // 
@@ -513,9 +537,10 @@
             this.btnAddChoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.btnAddChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddChoice.Image = global::Hanna_Studio.Properties.Resources.btnimage_plus_white;
-            this.btnAddChoice.Location = new System.Drawing.Point(272, 0);
+            this.btnAddChoice.Location = new System.Drawing.Point(205, 0);
+            this.btnAddChoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddChoice.Name = "btnAddChoice";
-            this.btnAddChoice.Size = new System.Drawing.Size(51, 56);
+            this.btnAddChoice.Size = new System.Drawing.Size(38, 46);
             this.btnAddChoice.TabIndex = 2;
             this.btnAddChoice.UseVisualStyleBackColor = false;
             this.btnAddChoice.Click += new System.EventHandler(this.BtnAddChoice_Click);
@@ -526,9 +551,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(23, 17);
+            this.label7.Location = new System.Drawing.Point(17, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 24);
+            this.label7.Size = new System.Drawing.Size(133, 18);
             this.label7.TabIndex = 0;
             this.label7.Text = "Sequence Choices";
             // 
@@ -541,9 +567,10 @@
             this.propsPanel.Controls.Add(this.panelProp);
             this.propsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.propsPanel.Enabled = false;
-            this.propsPanel.Location = new System.Drawing.Point(0, 56);
+            this.propsPanel.Location = new System.Drawing.Point(0, 46);
+            this.propsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.propsPanel.Name = "propsPanel";
-            this.propsPanel.Size = new System.Drawing.Size(323, 226);
+            this.propsPanel.Size = new System.Drawing.Size(243, 184);
             this.propsPanel.TabIndex = 2;
             // 
             // panel4
@@ -551,9 +578,10 @@
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.Controls.Add(this.checkBoxEndsq);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 176);
+            this.panel4.Location = new System.Drawing.Point(0, 144);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(323, 43);
+            this.panel4.Size = new System.Drawing.Size(243, 35);
             this.panel4.TabIndex = 6;
             this.panel4.Click += new System.EventHandler(this.CheckBoxEndsq_Click);
             // 
@@ -562,13 +590,13 @@
             this.checkBoxEndsq.AutoSize = true;
             this.checkBoxEndsq.Depth = 0;
             this.checkBoxEndsq.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkBoxEndsq.Location = new System.Drawing.Point(20, 8);
+            this.checkBoxEndsq.Location = new System.Drawing.Point(15, 6);
             this.checkBoxEndsq.Margin = new System.Windows.Forms.Padding(0);
             this.checkBoxEndsq.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBoxEndsq.MouseState = MaterialSkin.MouseState.HOVER;
             this.checkBoxEndsq.Name = "checkBoxEndsq";
             this.checkBoxEndsq.Ripple = true;
-            this.checkBoxEndsq.Size = new System.Drawing.Size(140, 30);
+            this.checkBoxEndsq.Size = new System.Drawing.Size(117, 30);
             this.checkBoxEndsq.TabIndex = 9;
             this.checkBoxEndsq.Text = "End Sequence";
             this.checkBoxEndsq.UseVisualStyleBackColor = true;
@@ -581,9 +609,10 @@
             this.panel3.Controls.Add(this.sqSecondaryTextTextBox);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 112);
+            this.panel3.Location = new System.Drawing.Point(0, 92);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(323, 64);
+            this.panel3.Size = new System.Drawing.Size(243, 52);
             this.panel3.TabIndex = 5;
             // 
             // btnEditProp2
@@ -595,9 +624,10 @@
             this.btnEditProp2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnEditProp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProp2.Image = global::Hanna_Studio.Properties.Resources.ic_edit_small;
-            this.btnEditProp2.Location = new System.Drawing.Point(272, 0);
+            this.btnEditProp2.Location = new System.Drawing.Point(205, 0);
+            this.btnEditProp2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditProp2.Name = "btnEditProp2";
-            this.btnEditProp2.Size = new System.Drawing.Size(51, 64);
+            this.btnEditProp2.Size = new System.Drawing.Size(38, 52);
             this.btnEditProp2.TabIndex = 10;
             this.btnEditProp2.Tag = "secondaryText";
             this.btnEditProp2.UseVisualStyleBackColor = false;
@@ -610,9 +640,10 @@
             this.sqSecondaryTextTextBox.Enabled = false;
             this.sqSecondaryTextTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
             this.sqSecondaryTextTextBox.ForeColor = System.Drawing.Color.White;
-            this.sqSecondaryTextTextBox.Location = new System.Drawing.Point(91, 23);
+            this.sqSecondaryTextTextBox.Location = new System.Drawing.Point(68, 19);
+            this.sqSecondaryTextTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sqSecondaryTextTextBox.Name = "sqSecondaryTextTextBox";
-            this.sqSecondaryTextTextBox.Size = new System.Drawing.Size(160, 23);
+            this.sqSecondaryTextTextBox.Size = new System.Drawing.Size(120, 18);
             this.sqSecondaryTextTextBox.TabIndex = 3;
             this.sqSecondaryTextTextBox.Tag = "changeSecondaryText";
             this.sqSecondaryTextTextBox.TextChanged += new System.EventHandler(this.SqProp_TextChanged);
@@ -621,9 +652,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(17, 23);
+            this.label6.Location = new System.Drawing.Point(13, 19);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
+            this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "secText";
             // 
@@ -634,9 +666,10 @@
             this.panel2.Controls.Add(this.sqMainTextTextBox);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 56);
+            this.panel2.Location = new System.Drawing.Point(0, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(323, 56);
+            this.panel2.Size = new System.Drawing.Size(243, 46);
             this.panel2.TabIndex = 4;
             // 
             // btnEditProp1
@@ -648,9 +681,10 @@
             this.btnEditProp1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnEditProp1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProp1.Image = global::Hanna_Studio.Properties.Resources.ic_edit_small;
-            this.btnEditProp1.Location = new System.Drawing.Point(272, 0);
+            this.btnEditProp1.Location = new System.Drawing.Point(205, 0);
+            this.btnEditProp1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditProp1.Name = "btnEditProp1";
-            this.btnEditProp1.Size = new System.Drawing.Size(51, 56);
+            this.btnEditProp1.Size = new System.Drawing.Size(38, 46);
             this.btnEditProp1.TabIndex = 11;
             this.btnEditProp1.Tag = "mainText";
             this.btnEditProp1.UseVisualStyleBackColor = false;
@@ -663,9 +697,10 @@
             this.sqMainTextTextBox.Enabled = false;
             this.sqMainTextTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
             this.sqMainTextTextBox.ForeColor = System.Drawing.Color.White;
-            this.sqMainTextTextBox.Location = new System.Drawing.Point(91, 23);
+            this.sqMainTextTextBox.Location = new System.Drawing.Point(68, 19);
+            this.sqMainTextTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sqMainTextTextBox.Name = "sqMainTextTextBox";
-            this.sqMainTextTextBox.Size = new System.Drawing.Size(160, 23);
+            this.sqMainTextTextBox.Size = new System.Drawing.Size(120, 18);
             this.sqMainTextTextBox.TabIndex = 2;
             this.sqMainTextTextBox.Tag = "changeMainText";
             this.sqMainTextTextBox.TextChanged += new System.EventHandler(this.SqProp_TextChanged);
@@ -674,9 +709,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(17, 23);
+            this.label5.Location = new System.Drawing.Point(13, 19);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 17);
+            this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "mainText";
             // 
@@ -687,17 +723,19 @@
             this.panelProp.Controls.Add(this.sqIdTextBox);
             this.panelProp.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProp.Location = new System.Drawing.Point(0, 0);
+            this.panelProp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelProp.Name = "panelProp";
-            this.panelProp.Size = new System.Drawing.Size(323, 56);
+            this.panelProp.Size = new System.Drawing.Size(243, 46);
             this.panelProp.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 20);
+            this.label3.Location = new System.Drawing.Point(13, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 17);
+            this.label3.Size = new System.Drawing.Size(15, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "id";
             // 
@@ -708,9 +746,10 @@
             this.sqIdTextBox.Enabled = false;
             this.sqIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
             this.sqIdTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.sqIdTextBox.Location = new System.Drawing.Point(91, 20);
+            this.sqIdTextBox.Location = new System.Drawing.Point(68, 16);
+            this.sqIdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sqIdTextBox.Name = "sqIdTextBox";
-            this.sqIdTextBox.Size = new System.Drawing.Size(160, 23);
+            this.sqIdTextBox.Size = new System.Drawing.Size(120, 18);
             this.sqIdTextBox.TabIndex = 1;
             // 
             // gradientPanel2
@@ -720,9 +759,12 @@
             this.gradientPanel2.Controls.Add(this.label2);
             this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(323, 56);
+            this.gradientPanel2.ShowBottomBorder = true;
+            this.gradientPanel2.Size = new System.Drawing.Size(243, 46);
             this.gradientPanel2.TabIndex = 1;
+            this.gradientPanel2.UseGradient = false;
             // 
             // label2
             // 
@@ -730,9 +772,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(23, 17);
+            this.label2.Location = new System.Drawing.Point(17, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
+            this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Properties";
             // 
@@ -741,18 +784,20 @@
             this.panelStatusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(115)))), ((int)(((byte)(255)))));
             this.panelStatusBar.Controls.Add(this.labelStatusBarMessage);
             this.panelStatusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatusBar.Location = new System.Drawing.Point(0, 722);
+            this.panelStatusBar.Location = new System.Drawing.Point(0, 593);
+            this.panelStatusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelStatusBar.Name = "panelStatusBar";
-            this.panelStatusBar.Size = new System.Drawing.Size(1327, 27);
+            this.panelStatusBar.Size = new System.Drawing.Size(997, 22);
             this.panelStatusBar.TabIndex = 3;
             // 
             // labelStatusBarMessage
             // 
             this.labelStatusBarMessage.AutoSize = true;
             this.labelStatusBarMessage.ForeColor = System.Drawing.Color.White;
-            this.labelStatusBarMessage.Location = new System.Drawing.Point(12, 5);
+            this.labelStatusBarMessage.Location = new System.Drawing.Point(9, 4);
+            this.labelStatusBarMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatusBarMessage.Name = "labelStatusBarMessage";
-            this.labelStatusBarMessage.Size = new System.Drawing.Size(49, 17);
+            this.labelStatusBarMessage.Size = new System.Drawing.Size(38, 13);
             this.labelStatusBarMessage.TabIndex = 0;
             this.labelStatusBarMessage.Text = "Ready";
             // 
@@ -766,9 +811,10 @@
             // 
             this.workspacePanel.Controls.Add(this.ultimateSplitContainer);
             this.workspacePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workspacePanel.Location = new System.Drawing.Point(0, 28);
+            this.workspacePanel.Location = new System.Drawing.Point(0, 24);
+            this.workspacePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.workspacePanel.Name = "workspacePanel";
-            this.workspacePanel.Size = new System.Drawing.Size(1327, 694);
+            this.workspacePanel.Size = new System.Drawing.Size(997, 569);
             this.workspacePanel.TabIndex = 4;
             // 
             // sequenceContextMenuStrip
@@ -782,7 +828,7 @@
             this.deleteThisSequenceToolStripMenuItem});
             this.sequenceContextMenuStrip.Name = "sequenceContextMenuStrip";
             this.sequenceContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.sequenceContextMenuStrip.Size = new System.Drawing.Size(216, 100);
+            this.sequenceContextMenuStrip.Size = new System.Drawing.Size(183, 92);
             this.sequenceContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.SequenceContextMenuStrip_Opening);
             // 
             // sequenceIDToolStripMenuItem
@@ -790,14 +836,14 @@
             this.sequenceIDToolStripMenuItem.Enabled = false;
             this.sequenceIDToolStripMenuItem.ForeColor = System.Drawing.Color.LightGray;
             this.sequenceIDToolStripMenuItem.Name = "sequenceIDToolStripMenuItem";
-            this.sequenceIDToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
+            this.sequenceIDToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.sequenceIDToolStripMenuItem.Text = "sequenceID";
             // 
             // editMainTextToolStripMenuItem
             // 
             this.editMainTextToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editMainTextToolStripMenuItem.Name = "editMainTextToolStripMenuItem";
-            this.editMainTextToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
+            this.editMainTextToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.editMainTextToolStripMenuItem.Tag = "mainText";
             this.editMainTextToolStripMenuItem.Text = "Edit mainText";
             this.editMainTextToolStripMenuItem.Click += new System.EventHandler(this.EditPropertyToolStripMenuItem_Click);
@@ -806,7 +852,7 @@
             // 
             this.editSecTextToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editSecTextToolStripMenuItem.Name = "editSecTextToolStripMenuItem";
-            this.editSecTextToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
+            this.editSecTextToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.editSecTextToolStripMenuItem.Tag = "secondaryText";
             this.editSecTextToolStripMenuItem.Text = "Edit secText";
             this.editSecTextToolStripMenuItem.Click += new System.EventHandler(this.EditPropertyToolStripMenuItem_Click);
@@ -815,7 +861,7 @@
             // 
             this.deleteThisSequenceToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.deleteThisSequenceToolStripMenuItem.Name = "deleteThisSequenceToolStripMenuItem";
-            this.deleteThisSequenceToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
+            this.deleteThisSequenceToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.deleteThisSequenceToolStripMenuItem.Text = "Delete this sequence";
             this.deleteThisSequenceToolStripMenuItem.Click += new System.EventHandler(this.DeleteThisSequenceToolStripMenuItem_Click);
             // 
@@ -838,17 +884,18 @@
             // 
             // frmWorkspace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1327, 749);
+            this.ClientSize = new System.Drawing.Size(997, 615);
             this.Controls.Add(this.popupPanel);
             this.Controls.Add(this.workspacePanel);
             this.Controls.Add(this.panelStatusBar);
             this.Controls.Add(this.workspaceMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.workspaceMenuStrip;
-            this.MinimumSize = new System.Drawing.Size(1345, 796);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(1013, 654);
             this.Name = "frmWorkspace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workspace";
